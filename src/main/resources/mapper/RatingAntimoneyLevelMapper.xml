@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jili.mapper.RatingAntimoneyLevelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jili.entity.RatingAntimoneyLevel">
+        <id column="ID" property="id" />
+        <result column="PROJECT_TYPE" property="projectType" />
+        <result column="CUSTOMER_TYPE" property="customerType" />
+        <result column="MERCHANT_NO" property="merchantNo" />
+        <result column="MERCHANT_NAME" property="merchantName" />
+        <result column="TOTAL_SCORE" property="totalScore" />
+        <result column="LEVEL" property="level" />
+        <result column="OPERATOR_ID" property="operatorId" />
+        <result column="CAREATE_TIME" property="careateTime" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="STATUS" property="status" />
+        <result column="APPROVE_STATE" property="approveState" />
+        <result column="APPROVE_IDS" property="approveIds" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, PROJECT_TYPE, CUSTOMER_TYPE, MERCHANT_NO, MERCHANT_NAME, TOTAL_SCORE, LEVEL, OPERATOR_ID, CAREATE_TIME, UPDATE_TIME, STATUS, APPROVE_STATE, APPROVE_IDS
+    </sql>
+</mapper>

@@ -1,0 +1,76 @@
+package rules
+ 
+import com.jili.entity.Order
+import com.jili.entity.User
+
+/*
+rule：关键字，表示规则开始，参数为规则的唯一名称。
+attributes：规则属性，是rule与when之间的参数，为可选项。
+when：关键字，后面跟规则的条件部分。
+LHS(Left Hand Side)：是规则的条件部分的通用名称。它由零个或多个条件元素组成。如果LHS为空，则它将被视为始终为true的条件元素。 （左手边）
+then：关键字，后面跟规则的结果部分。
+RHS(Right Hand Side)：是规则的后果或行动部分的通用名称。 （右手边）
+*/
+
+rule "zero"
+//    no-loop true
+//    lock-on-active true
+//    salience 1
+    when
+        $s : Order(amout <= 100)
+    then
+        $s.setScore(0);
+        update($s);
+end
+ 
+rule "add100"
+//    no-loop true
+//    lock-on-active true
+//    salience 1
+    when
+        $s : Order(amout > 100 && amout <= 500)
+    then
+        $s.setScore(100);
+        update($s);
+end
+
+
+rule "add500"
+//    no-loop true
+//    lock-on-active true
+//    salience 1
+    when
+        $s : Order(amout > 500 && amout <= 1000)
+    then
+        $s.setScore(500);
+        update($s);
+end
+ 
+rule "add1000"
+//    no-loop true
+//    lock-on-active true
+//    salience 1
+    when
+        $s : Order(amout > 1000)
+    then
+        $s.setScore(1000);
+        update($s);
+end
+
+/*
+在规则 RHS 调用 HelloService 实例的 sayHello 方法，并传递参数。
+
+DRL：
+global HelloService helloService
+
+rule "test"
+    when
+    then
+        helloService.sayHello("World");
+end
+
+Java 代码：
+ksession.setGlobal("helloService", helloService);
+ksession.fireAllRules();
+*/
+

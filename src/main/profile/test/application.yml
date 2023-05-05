@@ -1,0 +1,91 @@
+server:
+  port: 8901
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.26.39.200:3306/pay_engine?&autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: mysqladmin
+    password: 123465
+  redis:
+    namespace: "PAY-ENGINE-001:"
+    cluster:
+      nodes: 172.26.39.200:7000,172.26.39.200:7001,172.26.39.200:7002
+    connect-timeout: 30000
+    password: redis@20200818
+    lettuce:
+      pool:
+        max-active: 200
+        max-wait: -1ms
+        max-idle: 10
+        min-idle: 0
+
+mybatis-plus:
+  type-aliases-package: com.pay.engine.entity.system,com.pay.engine.api.service.entity.system
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    jdbc-type-for-null: null
+    call-setters-on-nulls: true
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+
+logging:
+  level:
+    com:
+      pay:
+        engine:
+          mapper: debug
+
+dubbo:
+  accepts: 1000
+  consumer:
+    timeout: 100000
+  file: dubbo.cache.ppms
+  group: ''
+  name: pay-risk-ppms
+  port: 39992
+  provider:
+    timeout: 100000
+  threads: 600
+  url: testzk01.com:3180,testzk01.com:3280,testzk01.com:3380
+
+thread:
+  pool:
+    max: 1000
+    min: 100
+    queue: 600
+    time: 30
+
+mail:
+  char: UTF-8
+  from: service@qianbaoeco.com
+  host: smtp.exmail.qq.com
+  name: 电信反欺诈系统邮件
+  pass: kefu@123
+  to: huangyan@bailianpay.com
+  user: service@qianbaoeco.com
+
+check:
+  config:
+    flag: ""
+    file: ""
+    value: ""
+
+mq:
+  address: testzk01.com:5672
+  username: guest
+  password: guest
+  retry:
+    init: 1000
+    max: 60000
+    num: 2
+    time: 10
+  consumer:
+    max: 1000
+    min: 100
+  test:
+    time: 10
+  vhost: /
