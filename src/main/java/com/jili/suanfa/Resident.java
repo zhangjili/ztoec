@@ -1,4 +1,4 @@
-package com.jili.util;
+package com.jili.suanfa;
 
 import java.util.Random;
 
