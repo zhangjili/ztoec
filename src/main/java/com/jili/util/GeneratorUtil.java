@@ -18,7 +18,7 @@ import java.util.Scanner;
  * mysql 代码生成器
  * </p>
  */
-public class Generator {
+public class GeneratorUtil {
     /**
      * RUN THIS
      */
