@@ -35,8 +35,11 @@ public class ComparisonTest extends TestApplicationTests {
         comparisonEntity.setList(list);
 
         kieSession.insert(comparisonEntity);
-        //通过规则过滤器实现只执行指定规则  根据名字匹配
+        //通过规则过滤器实现只执行指定规则  根据名字匹配，如果没有参数，讲执行所有匹配的规则
         kieSession.fireAllRules(new RuleNameEqualsAgendaFilter("rule_comparison_contains"));
+        //有获取焦点的分组中的规则才会触发。与activation-group不同的是，activation-group定义的分组中只能够有一个规则可以被触发，而agenda-group分组中的多个规则都可以被触发
+//        kieSession.getAgenda().getAgendaGroup("customAgendaGroup2").setFocus();
+
 //        kieSession.fireAllRules(2);  只执行两个策略
         //执行全部匹配到的策略
 //        kieSession.fireAllRules();
