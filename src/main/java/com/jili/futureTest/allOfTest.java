@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class allOfTest {
     public static void main(String[] args) {
 
-/*        ArrayList<CompletableFuture<String>> completableFutures1 = new ArrayList<CompletableFuture<String>>() {
+        ArrayList<CompletableFuture<String>> completableFutures1 = new ArrayList<CompletableFuture<String>>() {
             {
                 add(CompletableFuture.supplyAsync(() -> {
                     try {
@@ -26,7 +26,7 @@ public class allOfTest {
                     return "future2完成！";
                 }));
             }
-        };*/
+        };
 
 
         CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> {

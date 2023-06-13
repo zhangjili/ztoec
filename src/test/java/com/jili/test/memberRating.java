@@ -18,10 +18,10 @@ public class memberRating {
 	public void rating() {
 		MemberRatingRequest request = new MemberRatingRequest();
 		request.setCustomerType("CT");
-		request.setMemberNo("");
+		request.setMemberNo("202023052200001193");
 		System.out.println("request :"+request);
-//		MemberRatingResponse response = memRatingService.rating(request);
-		MemberRatingResponse response = memRatingService.query("1","1");
+		MemberRatingResponse response = memRatingService.rating(request);
+//		MemberRatingResponse response = memRatingService.query("1","1");
 		System.out.println("response:"+response);
 	}
 
