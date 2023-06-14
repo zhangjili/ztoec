@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.26.39.200：3306/pay_risk?useUnicode=true&amp;characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
-    username: riskuser
-    password: 123456
+    url: jdbc:mysql://dev-db.com:3306/pay_risk?useUnicode=true&amp;characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: root123
     hikari:
       max-lifetime: 1800000
       connection-timeout: 5000
