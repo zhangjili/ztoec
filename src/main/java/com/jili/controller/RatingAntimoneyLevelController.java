@@ -3,11 +3,6 @@ package com.jili.controller;
 
 import com.jili.entity.RatingAntimoneyLevel;
 import com.jili.service.RatingAntimoneyLevelService;
-import com.jili.service.impl.RatingAntimoneyLevelServiceImpl;
-import com.zrj.pay.data.api.DataQueryService;
-import com.zrj.pay.data.bo.DataQueryBaseRequest;
-import com.zrj.pay.data.bo.DataQueryBaseResponse;
-import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,9 +32,6 @@ import java.util.Map;
 public class RatingAntimoneyLevelController {
     @Autowired
     private RabbitTemplate rabbitTemplate;
-
-    @DubboReference(interfaceClass =DataQueryService.class,version = "1.0.0")
-    private DataQueryService dataQueryService;
 
     @Autowired
     private RatingAntimoneyLevelService ratingAntimoneyLevelService;
@@ -102,21 +94,5 @@ public class RatingAntimoneyLevelController {
         System.out.println(ratingAntimoneyLevel.get("id"));
     }
 
-    @GetMapping(path = "/dubboTest")
-    public DataQueryBaseResponse pathTest(){
-        DataQueryBaseRequest req = new DataQueryBaseRequest();
-        req.setSqlId("findConHis");
-        req.setSqlNamespace("risk.antimoney");
-        req.setSqlSource("11");
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("start_time","2023-03-17 00:00:00");
-        map.put("pages","1");
-        map.put("end_time","2023-03-18 00:00:00");
-        map.put("currentPage","1");
-        req.setSqlParam(map);
-        req.setPageNo(1);
-        req.setPageSize(33);
-        return dataQueryService.queryData(req);
-    }
 
 }

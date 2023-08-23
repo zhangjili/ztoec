@@ -1,22 +1,18 @@
 package com.jili.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.jili.annotation.abc;
 import com.jili.entity.RatingAntimoneyLevel;
 import com.jili.mapper.RatingAntimoneyLevelMapper;
 import com.jili.service.RatingAntimoneyLevelService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.jili.util.DateUtil;
-import com.zrj.pay.data.api.DataQueryService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
-import javax.annotation.PostConstruct;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;

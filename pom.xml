@@ -155,6 +155,17 @@
             <version>${pay-risk-api.version}</version>
         </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.palantir.gradle.jdks/gradle-jdks -->
+        <dependency>
+            <groupId>com.jfinal</groupId>
+            <artifactId>enjoy</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>3.0.9</version>
+        </dependency>
+
     </dependencies>
 
     <build>

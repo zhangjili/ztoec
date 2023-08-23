@@ -1,8 +1,5 @@
 package com.jili.test;
 
-import com.qianbao.redis.service.RedisClient;
-import org.apache.dubbo.config.annotation.DubboReference;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
