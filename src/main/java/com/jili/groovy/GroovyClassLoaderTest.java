@@ -2,7 +2,10 @@ package com.jili.groovy;
 
 import groovy.lang.GroovyClassLoader;
 import groovy.lang.GroovyObject;
+import org.apache.commons.lang.StringUtils;
 import org.codehaus.groovy.control.CompilerConfiguration;
+import org.jpmml.model.StringUtil;
+
 import java.util.HashMap;
 
 public class GroovyClassLoaderTest {
